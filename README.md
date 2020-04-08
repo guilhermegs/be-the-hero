@@ -14,6 +14,6 @@ O projeto é constituído por:
 - [Testes unitários](https://github.com/guilhermegs/be-the-hero/tree/master/back-end/tests/unit) utilizando [jest](https://jestjs.io/); e
 - [Testes integrados](https://github.com/guilhermegs/be-the-hero/tree/master/back-end/tests/integration) utilizando [supertest](https://www.npmjs.com/package/supertest)
 
-## Na pratica
+## Na prática
 Para ver a aplicação web funcionando, acesse: https://gs-be-the-hero-frontend.herokuapp.com/ <br>
 Para ver a api funcionando, acesse : https://gs-be-the-hero-backend.herokuapp.com/
