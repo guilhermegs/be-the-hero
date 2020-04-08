@@ -1,6 +1,6 @@
 # Be the Hero
 
-Projeto realizado durante a 11ª edição da Semana OmniStack, da @Rocketseat.
+Projeto realizado durante a 11ª edição da Semana OmniStack, da [Rocketseat](https://github.com/Rocketseat).
 
 ## Objetivos do projeto
 - Criar um sistema onde ONGs podem se cadastrar e cadastrar seus casos para pedir ajuda, informando qual o valor necessrio para aquele caso; e
