@@ -1,7 +1,7 @@
 {
     "hooks":{
       "pre-commit": [
-        "standard"
+        "lint-staged"
       ]
     }
 }
