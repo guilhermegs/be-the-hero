@@ -25,6 +25,15 @@ const makeSut = () => {
   }
 }
 
+const makeLoadOngsRepositorySpyWithError = () => {
+  class LoadOngsRepositorySpy {
+    async load () {
+      throw new Error()
+    }
+  }
+  return new LoadOngsRepositorySpy()
+}
+
 describe('Ong UseCase', () => {
   test('Should call LoadOngsRepository', async () => {
     const { sut, loadOngsRepositorySpy } = makeSut()
@@ -37,5 +46,11 @@ describe('Ong UseCase', () => {
     const { sut, loadOngsRepositorySpy } = makeSut()
     const ongs = await sut.getOngs()
     expect(loadOngsRepositorySpy.ongs).toEqual(ongs)
+  })
+
+  test('Should throw if LoadOngsRepository throws', async () => {
+    const sut = new OngUseCase(makeLoadOngsRepositorySpyWithError())
+    const promise = sut.getOngs()
+    expect(promise).rejects.toThrow()
   })
 })
