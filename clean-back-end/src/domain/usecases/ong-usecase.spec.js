@@ -1,30 +1,22 @@
-class OngUseCase {
-  constructor (loadOngsRepository) {
-    this.loadOngsRepository = loadOngsRepository
-  }
-
-  async getOngs () {
-    return await this.loadOngsRepository.load()
-  }
-}
-
-class LoadOngsRepositorySpy {
-  constructor () {
-    this.calledTimes = 0
-    this.ongs = [{
-      id: 1,
-      name: 'ANY ONG'
-    }]
-  }
-
-  async load () {
-    this.wasCalled = true
-    this.calledTimes++
-    return this.ongs
-  }
-}
+const OngUseCase = require('./ong-usecase')
 
 const makeSut = () => {
+  class LoadOngsRepositorySpy {
+    constructor () {
+      this.calledTimes = 0
+      this.ongs = [{
+        id: 1,
+        name: 'ANY ONG'
+      }]
+    }
+
+    async load () {
+      this.wasCalled = true
+      this.calledTimes++
+      return this.ongs
+    }
+  }
+
   const loadOngsRepositorySpy = new LoadOngsRepositorySpy()
   const sut = new OngUseCase(loadOngsRepositorySpy)
   return {
