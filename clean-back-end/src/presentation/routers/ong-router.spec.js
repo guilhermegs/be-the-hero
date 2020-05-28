@@ -2,12 +2,12 @@ const OngRouter = require('./ong-router')
 
 class OngUseCaseSpy {
   constructor () {
-    this.times = 0
+    this.calledTimes = 0
   }
 
   async getOngs () {
     this.wasCalled = true
-    this.times++
+    this.calledTimes++
     return [{}]
   }
 }
@@ -25,7 +25,7 @@ describe('Ong Router', () => {
       await sut.index()
 
       expect(ongUseCaseSpy.wasCalled).toBe(true)
-      expect(ongUseCaseSpy.times).toBe(1)
+      expect(ongUseCaseSpy.calledTimes).toBe(1)
     })
   })
 })
