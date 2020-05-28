@@ -53,4 +53,15 @@ describe('Ong UseCase', () => {
     const promise = sut.getOngs()
     expect(promise).rejects.toThrow()
   })
+
+  test('Should throw if invalid dependencies are provided', async () => {
+    const suts = [].concat(
+      new OngUseCase(),
+      new OngUseCase({})
+    )
+    for (const sut of suts) {
+      const promise = sut.getOngs()
+      expect(promise).rejects.toThrow()
+    }
+  })
 })
